@@ -185,11 +185,19 @@ body {
 }
 
 .cover-footer {
+  flex-wrap: wrap;
   border-top: 1px solid var(--border);
   padding: 24px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 780px) {
+  .cover-footer {
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 
 .cover-tags {
@@ -337,7 +345,7 @@ body {
 
 .audience-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 16px;
   margin-top: 48px;
 }
@@ -347,6 +355,7 @@ body {
   border: 1px solid var(--border);
   padding: 28px 24px;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: flex-start;
   transition: border-color 0.3s;
@@ -517,7 +526,7 @@ body {
 
 .scheme-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   margin-top: 24px;
 }
@@ -558,6 +567,12 @@ body {
   gap: 1px;
   margin-top: 48px;
   background: var(--border);
+}
+
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  }
 }
 
 .why-card {
@@ -672,7 +687,7 @@ body {
 
 .privilege-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 24px;
 }
 
@@ -792,6 +807,12 @@ body {
   background: var(--border);
   border-top: 1px solid var(--border);
   padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
 
 .contact-cell {
